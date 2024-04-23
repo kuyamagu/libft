@@ -1,0 +1,5 @@
+*.o
+*.out
+*.a
+libft_tester/
+tokyo_tester/
