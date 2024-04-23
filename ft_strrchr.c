@@ -1,36 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kuyamagu <kuyamagu@student.42tokyo.>       +#+  +:+       +#+        */
+/*   By: kuyamagu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/21 22:33:21 by kuyamagu          #+#    #+#             */
-/*   Updated: 2024/04/23 23:10:19 by kuyamagu         ###   ########.fr       */
+/*   Created: 2024/04/23 23:11:47 by kuyamagu          #+#    #+#             */
+/*   Updated: 2024/04/23 23:21:11 by kuyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strchr(const char *s, int c)
+char * ft_strrchr(const char *s, int c)
 {
 	char *tmp;
 	char	t;
 
-	tmp = (char*)s;
+	tmp = (char*) s;
 	t = (char) c;
-	while (*tmp && *tmp != t)
+
+	while (*tmp)
 		tmp++;
-	if(*tmp == t)
+	if (t == '\0')
 		return (tmp);
+	tmp--;
+	while (*tmp)
+	{
+		if (*tmp == t)
+			return (tmp);
+		tmp--;
+	}
 	return (NULL);
 }
-/*
-int	main (void)
-{
-	char *s = "asdfgh";
-	char *ss = "asdfgh";
-	printf("結果:%s\n",strchr(s, 300));
-	printf("結果:%s\n",ft_strchr(ss, 300));
-}
-*/
