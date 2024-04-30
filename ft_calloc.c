@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kuyamagu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/23 23:11:47 by kuyamagu          #+#    #+#             */
-/*   Updated: 2024/04/29 22:41:11 by kuyamagu         ###   ########.fr       */
+/*   Created: 2024/04/29 16:46:31 by kuyamagu          #+#    #+#             */
+/*   Updated: 2024/04/29 17:43:55 by kuyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char * ft_strrchr(const char *s, int c)
+void *ft_calloc(size_t count, size_t size)
 {
-	char	*s_tmp;
-	char	c_str;
-	int	i;
-
-	s_tmp = (char*) s;
-	c_str = (char) c;
-	i = 0;
-	while (s_tmp[i] != '\0')
-		i++;
-	if (c_str == '\0')
-		return (s_tmp + i);
-	while (0 <= i)
-	{
-		if (s_tmp[i] == c_str)
-			return (s_tmp + i);
-		i--;
-	}
-	return (NULL);
+	size_t	total_size;
+	void	*result;
+	
+	if (size && count > SIZE_MAX / size)
+		return (NULL);
+	total_size = count * size;
+	result = malloc(total_size);
+	if (result == NULL)
+		return (NULL);
+	ft_bzero(result, total_size);
+	return (result);
 }

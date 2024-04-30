@@ -6,7 +6,7 @@
 /*   By: kuyamagu <kuyamagu@student.42tokyo.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 16:54:03 by kuyamagu          #+#    #+#             */
-/*   Updated: 2024/04/21 21:45:35 by kuyamagu         ###   ########.fr       */
+/*   Updated: 2024/04/29 19:03:25 by kuyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ size_t ft_strlcat(char *dst, const char *src, size_t dstsize)
 	dst_len = 0;
 	src_len = 0;
 	src_len = ft_strlen(src);
-	if (!dst || dstsize == 0)
+	if (dstsize == 0)
 		return (src_len);
 	dst_len = ft_strlen(dst);
 	if (dst_len >= dstsize)
