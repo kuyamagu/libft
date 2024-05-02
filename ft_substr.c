@@ -6,7 +6,7 @@
 /*   By: kuyamagu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 19:11:26 by kuyamagu          #+#    #+#             */
-/*   Updated: 2024/04/29 23:31:19 by kuyamagu         ###   ########.fr       */
+/*   Updated: 2024/05/02 22:46:08 by kuyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,30 +15,31 @@
 char * ft_substr(char const *s, unsigned int start,size_t len)
 {
 	char *result;
-	size_t	i;
-
+	int	size;
+	if (!*s)
+		return (NULL);
 	if (start >= ft_strlen(s) || len == 0)
-		return ((char*) s + ft_strlen(s));
-	result = malloc(len + 1);
+	{
+		result = malloc(1);
+		if (result == NULL)
+			return (NULL);
+		result[0] = '\0';
+		return (result);
+	}
+	if (start > ft_strlen(s) - len)
+		size = ft_strlen(s) - start;
+	else
+		size = len;
+	result = malloc(size + 1);
 	if (result == NULL)
 		return (NULL);
-	i = 0;
-	while (i < len)
-	{
-		if (s[start] != '\0')
-			result[i] = s[start];
-		else
-			return (result);
-		i++;
-		start++;
-	}
-	result[i] = '\0';
+	ft_strlcpy(result, s + start, size + 1);
 	return (result);
 }
 /*
 int main(void)
 {
-	char *s = "libft-test-tokyo";
-	printf("kekka:%s\n",ft_substr(s,5,100));
+	char *s = "abcdeabcde";
+	printf("kekka:%s\n",ft_substr(s,15,100));
 }
 */
