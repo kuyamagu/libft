@@ -6,7 +6,7 @@
 /*   By: kuyamagu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 19:11:26 by kuyamagu          #+#    #+#             */
-/*   Updated: 2024/05/02 22:46:08 by kuyamagu         ###   ########.fr       */
+/*   Updated: 2024/05/03 16:07:15 by kuyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char * ft_substr(char const *s, unsigned int start,size_t len)
 {
 	char *result;
 	int	size;
-	if (!*s)
+	if (!s)
 		return (NULL);
 	if (start >= ft_strlen(s) || len == 0)
 	{
