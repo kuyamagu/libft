@@ -6,7 +6,7 @@
 /*   By: kuyamagu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 22:47:08 by kuyamagu          #+#    #+#             */
-/*   Updated: 2024/05/03 15:25:22 by kuyamagu         ###   ########.fr       */
+/*   Updated: 2024/05/06 21:44:25 by kuyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char * ft_strjoin(char const *s1, char const *s2)
 	int	len_s2;
 	int	i;
 
+	if (!s1 || !s2)
+		return (NULL);
 	len_s1 = ft_strlen(s1);
 	len_s2 = ft_strlen(s2);
 	result = malloc(len_s1 + len_s2 + 1);
