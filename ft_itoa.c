@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static int count_digit(int n)
+static int	count_digit(int n)
 {
 	int	cnt_digit;
 
@@ -27,19 +27,18 @@ static int count_digit(int n)
 	return (cnt_digit);
 }
 
-
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	char	*result;
-	int	cnt_digit;
-	int	i;
+	int		cnt_digit;
+	int		i;
 
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
 	if (n == 0)
 		return (ft_strdup("0"));
 	cnt_digit = count_digit(n);
-	result = (char*) ft_calloc(1, cnt_digit + 1);
+	result = (char *)ft_calloc(1, cnt_digit + 1);
 	if (result == NULL)
 		return (NULL);
 	i = cnt_digit;
@@ -58,7 +57,9 @@ char *ft_itoa(int n)
 /*
 int main (void)
 {
-	int n = -1234;
+	int	n;
+
+	n = -1234;
 	printf("kekka:%s\n",ft_itoa(n));
 }
 */

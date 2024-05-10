@@ -10,17 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
 int	ft_isalpha(int c);
 int	ft_isdigit(int c);
 
-int ft_isalnum(int c)
+int	ft_isalnum(int c)
 {
-	if((48 <= c && c <= 57) || (65 <= c && c <= 90) || (97 <= c && c <= 122))
+	if ((48 <= c && c <= 57) || (65 <= c && c <= 90) || (97 <= c && c <= 122))
 		return (1);
 	return (0);
-
 }
 
 // int main (void)
@@ -38,4 +37,3 @@ int ft_isalnum(int c)
 // 	int	f = 0;
 // 	printf("ft_isalnumの結果：%d\n", ft_isalnum(f));
 // }
-

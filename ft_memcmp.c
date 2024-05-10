@@ -12,15 +12,14 @@
 
 #include "libft.h"
 
-int ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	unsigned char	*s1_tmp;
 	unsigned char	*s2_tmp;
+	size_t			i;
 
-	size_t	i;
-
-	s1_tmp = (unsigned char*) s1;
-	s2_tmp = (unsigned char*) s2;
+	s1_tmp = (unsigned char *)s1;
+	s2_tmp = (unsigned char *)s2;
 	if (n == 0)
 		return (0);
 	i = 0;
@@ -31,13 +30,16 @@ int ft_memcmp(const void *s1, const void *s2, size_t n)
 /*
 int main (void)
 {
-	size_t	size = 10;
-	char *b1 = malloc(size);
+	size_t	size;
+	char	*b1;
+	size_t	size1;
+	char	*b11;
 
+	size = 10;
+	b1 = malloc(size);
 	printf ("ft%d\n",ft_memcmp(b1, ".........", size));
-	
-	size_t	size1 = 10;
-	char *b11 = malloc(size);
+	size1 = 10;
+	b11 = malloc(size);
 	printf("kekka%d\n",memcmp(b11, ".........", size1));
 }
 */

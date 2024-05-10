@@ -12,24 +12,27 @@
 
 #include "libft.h"
 
-char *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-	char *tmp;
+	char	*tmp;
 	char	t;
 
-	tmp = (char*)s;
-	t = (char) c;
+	tmp = (char *)s;
+	t = (char)c;
 	while (*tmp && *tmp != t)
 		tmp++;
-	if(*tmp == t)
+	if (*tmp == t)
 		return (tmp);
 	return (NULL);
 }
 /*
 int	main (void)
 {
-	char *s = "asdfgh";
-	char *ss = "asdfgh";
+	char	*s;
+	char	*ss;
+
+	s = "asdfgh";
+	ss = "asdfgh";
 	printf("結果:%s\n",strchr(s, 300));
 	printf("結果:%s\n",ft_strchr(ss, 300));
 }

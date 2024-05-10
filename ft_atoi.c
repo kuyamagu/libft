@@ -25,8 +25,7 @@ int	ft_judge(long result, const char *str, long sign)
 	return (FALSE);
 }
 
-
-int ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
 	long	sign;
 	long	result;
@@ -43,9 +42,9 @@ int ft_atoi(const char *str)
 	}
 	while (ft_isdigit(*str))
 	{
-		if (sign == 1  && !ft_judge(result, str, sign))
+		if (sign == 1 && !ft_judge(result, str, sign))
 			return ((int)LONG_MAX);
-		if (sign == -1  && !ft_judge(result, str, sign))
+		if (sign == -1 && !ft_judge(result, str, sign))
 			return ((int)LONG_MIN);
 		result = result * 10 + *str - '0';
 		str++;

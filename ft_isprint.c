@@ -10,14 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
 int	ft_isprint(int c)
 {
-	if(32 <= c && c <= 126)	
+	if (32 <= c && c <= 126)
 		return (1);
 	return (0);
-
 }
 
 // int	main(void)
@@ -29,7 +28,7 @@ int	ft_isprint(int c)
 // 			printf("ok：%d\n",a);
 // 		else
 // 			printf("NG:%d\n",a);
-		
+
 // 		a++;
 // 	}
 // }

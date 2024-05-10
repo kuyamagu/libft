@@ -12,13 +12,13 @@
 
 #include "libft.h"
 
-int ft_strncmp (const char *s1, const char *s2, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	unsigned char	*s1_tmp;
 	unsigned char	*s2_tmp;
 
-	s1_tmp = (unsigned char*) s1;
-	s2_tmp = (unsigned char*) s2;
+	s1_tmp = (unsigned char *)s1;
+	s2_tmp = (unsigned char *)s2;
 	while (0 < n && (*s1_tmp || *s2_tmp))
 	{
 		if (*s1_tmp != *s2_tmp)
@@ -32,16 +32,20 @@ int ft_strncmp (const char *s1, const char *s2, size_t n)
 /*
 int main (void)
 {
-	char	*s1 = "panda2";
-	char	*s2 = "pan";
-	int	i = 4;
+	char	*s1;
+	char	*s2;
+	int		i;
+	char	*s11;
+	char	*s22;
+	int		j;
 
+	s1 = "panda2";
+	s2 = "pan";
+	i = 4;
 	printf("honke:%d\n",strncmp(s1,s2,i));
-
-	char	*s11 = "panda2";
-	char	*s22 = "pan";
-	int j = 4;
-
+	s11 = "panda2";
+	s22 = "pan";
+	j = 4;
 	printf("ft_strncmp:%d\n",ft_strncmp(s11,s22,j));
 }
 */

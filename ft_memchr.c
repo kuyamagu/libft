@@ -12,18 +12,18 @@
 
 #include "libft.h"
 
-void * ft_memchr(const void *s, int c, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
 	unsigned char	*s_tmp;
 	unsigned char	c_tmp;
-	size_t	i;
+	size_t			i;
 
-	s_tmp = (unsigned char *) s;
-	c_tmp = (unsigned char) c;
+	s_tmp = (unsigned char *)s;
+	c_tmp = (unsigned char)c;
 	i = 0;
 	if (n != 0)
 	{
-		while (s_tmp[i] != c_tmp && i  < n - 1)
+		while (s_tmp[i] != c_tmp && i < n - 1)
 			i++;
 	}
 	if (s_tmp[i] == c_tmp)
@@ -31,20 +31,23 @@ void * ft_memchr(const void *s, int c, size_t n)
 	return (NULL);
 }
 /*
-int main(void)
+int	main(void)
 {
-	char *s = ":(){ :|: & };:";
+	char	*s;
+	char	*s1;
+	char	*str;
+	size_t	n;
+
+	s = ":(){ :|: & };:";
 	printf("%s\n", ft_memchr(s, '\xde', 15));
-	char *s1 = ":(){ :|: & };:";
+	s1 = ":(){ :|: & };:";
 	printf("%s\n", memchr(s1, '\xde', 15));
  }
-
 #include <stdlib.h>
 int	main(int argc, char **argv)
 {
-	char *str = argv[1];
-	size_t	n = atoi(argv[2]);
-
+	str = argv[1];
+	n = atoi(argv[2]);
 	ft_memchr(str, 'a', n);
 }
 */

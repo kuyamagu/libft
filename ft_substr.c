@@ -12,10 +12,11 @@
 
 #include "libft.h"
 
-char * ft_substr(char const *s, unsigned int start,size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char *result;
-	int	size;
+	char	*result;
+	int		size;
+
 	if (!s)
 		return (NULL);
 	if (start >= ft_strlen(s) || len == 0)
@@ -37,9 +38,11 @@ char * ft_substr(char const *s, unsigned int start,size_t len)
 	return (result);
 }
 /*
-int main(void)
+int	main(void)
 {
-	char *s = "abcdeabcde";
+	char	*s;
+
+	s = "abcdeabcde";
 	printf("kekka:%s\n",ft_substr(s,15,100));
 }
 */

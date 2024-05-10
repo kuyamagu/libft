@@ -6,30 +6,26 @@
 /*   By: kuyamagu <kuyamagu@student.42tokyo.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 19:13:35 by kuyamagu          #+#    #+#             */
-/*   Updated: 2024/04/20 22:54:31 by kuyamagu         ###   ########.fr       */
+/*   Updated: 2024/05/11 07:57:57 by kuyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void * ft_memmove(void *dst, const void *src, size_t len)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	unsigned char	*tmp;
+	unsigned char		*tmp;
 	const unsigned char	*stmp;
-	size_t	i;
+	size_t				i;
 
-	tmp = (unsigned char *) dst;
-	stmp = (const unsigned char *) src;
+	tmp = (unsigned char *)dst;
+	stmp = (const unsigned char *)src;
 	i = 0;
 	if (!dst && !src)
 		return (NULL);
 	if (dst < src)
 	{
-		while (i < len)
-		{
-			tmp[i] = stmp[i];
-			i++;
-		}
+		ft_memcpy(tmp, stmp, len);
 	}
 	else
 	{
@@ -44,10 +40,13 @@ void * ft_memmove(void *dst, const void *src, size_t len)
 /*
 int	main (void)
 {
-	char *src = malloc(100);
+	char	*src;
+	char	*dst;
+
+	src = malloc(100);
 	for (int i = 0; i < 100; i++)
 		src[i] = i;
-	char *dst = malloc(100);
+	dst = malloc(100);
 	printf("ft_memmoveの結果:%p\n",ft_memmove(dst, dst + 21, 50));
 }
 */
