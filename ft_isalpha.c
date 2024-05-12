@@ -6,18 +6,15 @@
 /*   By: kuyamagu <kuyamagu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 20:06:08 by kuyamagu          #+#    #+#             */
-/*   Updated: 2024/04/20 16:19:49 by kuyamagu         ###   ########.fr       */
+/*   Updated: 2024/05/12 20:14:20 by kuyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isupper(int c);
-int	ft_islower(int c);
-
 int	ft_isalpha(int c)
 {
-	if ((65 <= c && c <= 90) || (97 <= c && c <= 122))
+	if (('A' <= c && c <= 'Z') || ('a' <= c && c <= 'z'))
 		return (1);
 	else
 		return (0);

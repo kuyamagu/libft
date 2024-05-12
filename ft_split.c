@@ -6,7 +6,7 @@
 /*   By: kuyamagu <kuyamagu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 22:02:48 by kuyamagu          #+#    #+#             */
-/*   Updated: 2024/05/11 07:55:00 by kuyamagu         ###   ########.fr       */
+/*   Updated: 2024/05/12 16:45:52 by kuyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int	count_words(const char *s, char c)
 	{
 		while (s[i] == c && s[i] != '\0')
 			i++;
-		if (s[i] != c)
+		if (s[i] != '\0')
 			count++;
 		while (s[i] != c && s[i] != '\0')
 			i++;
@@ -31,7 +31,7 @@ static int	count_words(const char *s, char c)
 	return (count);
 }
 
-static int	count_word(const char *s, char c)
+static int	count_len(const char *s, char c)
 {
 	int	i;
 
@@ -43,31 +43,26 @@ static int	count_word(const char *s, char c)
 
 static char	**all_free(char **result, int words_num)
 {
-	while (0 <= words_num--)
+	while (0 < words_num--)
 		free(result[words_num]);
 	free(result);
 	return (NULL);
 }
 
-char	**ft_split(char const *s, char c)
+static char	**make_word(char **result, char const *s, char c)
 {
-	char	**result;
-	int		i;
-	int		words_num;
-	int		len;
+	int	len;
+	int	i;
+	int	words_num;
 
-	if (!s)
-		return (NULL);
-	result = (char **)malloc(sizeof(char *) * (count_words(s, c) + 1));
-	if (result == NULL)
-		return (NULL);
-	i = 0;
+	len = 0;
 	words_num = 0;
+	i = 0;
 	while (s[i] != '\0')
 	{
 		if (s[i] != c && s[i] != '\0')
 		{
-			len = count_word(s + i, c);
+			len = count_len(s + i, c);
 			result[words_num] = (char *)malloc(sizeof(char) * (len + 1));
 			if (result[words_num] == NULL)
 				return (all_free(result, words_num));
@@ -79,6 +74,19 @@ char	**ft_split(char const *s, char c)
 			i++;
 	}
 	result[words_num] = NULL;
+	return (result);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**result;
+
+	if (!s)
+		return (NULL);
+	result = (char **)malloc(sizeof(char *) * (count_words(s, c) + 1));
+	if (result == NULL)
+		return (NULL);
+	result = make_word(result, s, c);
 	return (result);
 }
 /*

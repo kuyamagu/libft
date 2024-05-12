@@ -6,7 +6,7 @@
 /*   By: kuyamagu <kuyamagu@student.42tokyo.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 22:33:21 by kuyamagu          #+#    #+#             */
-/*   Updated: 2024/04/23 23:10:19 by kuyamagu         ###   ########.fr       */
+/*   Updated: 2024/05/12 20:22:52 by kuyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,17 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	char	*tmp;
-	char	t;
+	char	*s_tmp;
+	char	c_tmp;
+	int		i;
 
-	tmp = (char *)s;
-	t = (char)c;
-	while (*tmp && *tmp != t)
-		tmp++;
-	if (*tmp == t)
-		return (tmp);
+	s_tmp = (char *) s;
+	c_tmp = (char) c;
+	i = 0;
+	while (s_tmp[i] && s_tmp[i] != c_tmp)
+		i++;
+	if (s_tmp[i] == c_tmp)
+		return (s_tmp + i);
 	return (NULL);
 }
 /*

@@ -6,7 +6,7 @@
 /*   By: kuyamagu <kuyamagu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 23:14:06 by kuyamagu          #+#    #+#             */
-/*   Updated: 2024/04/29 22:01:48 by kuyamagu         ###   ########.fr       */
+/*   Updated: 2024/05/11 21:30:39 by kuyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	unsigned char	c_tmp;
 	size_t			i;
 
+	if (n == 0)
+		return (NULL);
 	s_tmp = (unsigned char *)s;
 	c_tmp = (unsigned char)c;
 	i = 0;
@@ -35,14 +37,15 @@ int	main(void)
 {
 	char	*s;
 	char	*s1;
-	char	*str;
-	size_t	n;
+//	char	*str;
+//	size_t	n;
 
-	s = ":(){ :|: & };:";
-	printf("%s\n", ft_memchr(s, '\xde', 15));
-	s1 = ":(){ :|: & };:";
-	printf("%s\n", memchr(s1, '\xde', 15));
+	s = "acc";
+	printf("%s\n", ft_memchr(s, 0, 0));
+	s1 = "acc";
+	printf("%s\n", memchr(s1, 0, 0));
  }
+
 #include <stdlib.h>
 int	main(int argc, char **argv)
 {

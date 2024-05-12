@@ -6,18 +6,15 @@
 /*   By: kuyamagu <kuyamagu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 23:11:35 by kuyamagu          #+#    #+#             */
-/*   Updated: 2024/04/20 16:22:19 by kuyamagu         ###   ########.fr       */
+/*   Updated: 2024/05/12 20:14:23 by kuyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c);
-int	ft_isdigit(int c);
-
 int	ft_isalnum(int c)
 {
-	if ((48 <= c && c <= 57) || (65 <= c && c <= 90) || (97 <= c && c <= 122))
+	if (ft_isdigit(c) || ft_isalpha(c))
 		return (1);
 	return (0);
 }
