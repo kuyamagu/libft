@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kuyamagu <kuyamagu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kuyamagu <kuyamagu@student.42tokyo.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 19:13:35 by kuyamagu          #+#    #+#             */
-/*   Updated: 2024/05/12 22:16:36 by kuyamagu         ###   ########.fr       */
+/*   Updated: 2024/05/11 07:57:57 by kuyamagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,9 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	if (!dst && !src)
 		return (NULL);
 	if (dst < src)
+	{
 		ft_memcpy(tmp, stmp, len);
+	}
 	else
 	{
 		while (0 < len)
